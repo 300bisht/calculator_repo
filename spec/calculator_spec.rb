@@ -1,9 +1,9 @@
 require './calculator.rb'
 RSpec.describe Calculator do
   describe '.add' do
-    context 'when a multi-character delimiter is used' do
-      it 'returns the sum of the numbers separated by the multi-character delimiter' do
-        expect(Calculator.add("//[***]\n1***2***3")).to eq(6)
+    context 'when negative numbers are present' do
+      it 'raises an ArgumentError with a message listing the negative numbers' do
+        expect { Calculator.add("1,-2") }.to raise_error(ArgumentError, "negative numbers not allowed -2")
       end
     end
   end
