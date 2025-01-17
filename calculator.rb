@@ -2,7 +2,7 @@ class Calculator
   def self.add(numbers)
     return 0 if numbers.empty?
 
-    # If there's only one number, return that number itself
-    return numbers.to_i if numbers =~ /^\d+$/
+    numbers_array = numbers.split(',').map(&:to_i)
+    numbers_array.sum
   end
 end
